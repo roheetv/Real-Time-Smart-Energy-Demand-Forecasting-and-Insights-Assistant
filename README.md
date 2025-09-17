@@ -146,7 +146,7 @@ Narrative explanation (LLM or deterministic markdown)
 
 Demand visualization for the last 7 days
 
-#Future Improvements
+# Future Improvements
 
 Stronger forecasting models: gradient boosting, LSTMs, or transformer-based time-series models
 
