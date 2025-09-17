@@ -1,8 +1,8 @@
-#Real-Time Smart Energy Demand Forecasting & RAG Insights
+# Real-Time Smart Energy Demand Forecasting & RAG Insights
 
 This project is a Retrieval-Augmented Generation (RAG) powered assistant for real-time electricity demand forecasting and operational insights. Unlike traditional dashboards that only show forecasted numbers, this assistant explains why demand is expected to change, retrieves relevant historical analogs, and generates human-readable recommendations for grid operators.
 
-#Overview
+# Overview
 
 The system combines three layers:
 
@@ -14,7 +14,7 @@ RAG Layer: Retrieves historical high-demand events and generates a narrative exp
 
 Users interact with the assistant through a Streamlit interface where they can select a time, type in queries, and receive contextual explanations alongside charts and similar past events.
 
-#Key Features
+# Key Features
 
 Next-hour demand forecasting with linear regression and engineered features
 
@@ -28,7 +28,7 @@ Narrative generation using FLAN-T5, transforming raw forecasts into clear operat
 
 Interactive Streamlit UI for queries, forecasts, and visualizations
 
-#Data Sources
+# Data Sources
 
 The assistant uses a mix of cleaned and standardized datasets:
 
@@ -46,7 +46,7 @@ Hourly weather features from open APIs (temperature, humidity, rainfall, wind, p
 
 All datasets were standardized to a consistent schema with timestamp, region, demand, and weather variables.
 
-#Data Processing Pipeline
+# Data Processing Pipeline
 
 Step 1: Data ingestion
 CSV files from Kaggle, IEA, India portal, OEDI, and weather sources are read into pandas dataframes.
@@ -82,7 +82,7 @@ The forecast, dynamic threshold, and retrieved analogs are composed into a struc
 Step 10: UI and orchestration
 A Streamlit interface ties all steps together, showing forecasts, threshold comparisons, retrieved events, and narrative explanations with visualizations of recent demand.
 
-#Forecasting Model
+# Forecasting Model
 
 The baseline model is a linear regression trained on:
 
@@ -98,7 +98,7 @@ Root Mean Square Error ≈ 520 MW
 
 Other models tested included Decision Trees, Random Forest, Gradient Boosting, and XGBoost. Linear Regression and Gradient Boosting provided the best balance of interpretability and performance.
 
-#RAG Layer
+# RAG Layer
 
 The RAG implementation consists of:
 
@@ -114,7 +114,7 @@ Augmentation: retrieved evidence is appended to the model prompt
 
 Generation: FLAN-T5 produces a cohesive briefing with forecast summary, historical context, and actionable recommendations
 
-#Features Explained
+# Features Explained
 
 Demand MW: electricity drawn from the grid at a given time, in megawatts
 Demand lag 1h: demand exactly one hour earlier
@@ -130,7 +130,7 @@ Calendar features: hour of day, day of week, month, weekend
 Event flags: binary indicators of heatwaves, heavy rain, high humidity
 p90 threshold: 90th percentile of historical demand for the same month and hour, defining unusual demand
 
-#Streamlit UI
+# Streamlit UI
 
 The interface provides:
 
